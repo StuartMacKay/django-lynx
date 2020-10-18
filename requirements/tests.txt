@@ -46,13 +46,9 @@ pytest-factoryboy==2.0.3  # via -r requirements/tests.in
 pytest-flake8==1.0.6      # via -r requirements/tests.in
 pytest-isort==1.2.0       # via -r requirements/tests.in
 pytest==6.1.0             # via -r requirements/tests.in, pytest-black, pytest-cov, pytest-django, pytest-factoryboy, pytest-flake8
-<<<<<<< HEAD
-python-dateutil==2.8.1    # via faker
-=======
 python-dateutil==2.8.1    # via faker, freezegun
 python3-openid==3.2.0     # via django-allauth
 pytz==2020.1              # via django
->>>>>>> eda652e... rebase
 regex==2020.9.27          # via black
 requests-oauthlib==1.3.0  # via django-allauth
 requests==2.24.0          # via django-allauth, requests-oauthlib
