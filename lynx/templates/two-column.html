@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="l-flex-row">
+  <div class="l-flex-column">
+    {% block left-column %}
+    {% endblock %}
+  </div>
+  <div class="l-flex-column">
+    {% block right-column %}
+    {% endblock %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,86 @@
+.l-page {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  line-height: 1.5;
+
+  &__inner {
+    width: 80%;
+    margin: auto;
+  }
+
+  &__header {
+  }
+
+  &__navigation {
+  }
+
+  &__content {
+    border-top: thin solid #eeeeee;
+    border-bottom: thin solid #eeeeee;
+    min-height: 75vh;
+  }
+
+  &__footer {
+    width: 80%;
+    margin: auto;
+  }
+
+}
+
+.c-header {
+  display: flex;
+  flex-direction: row;
+
+  &__logo {
+    padding-top: 0.5rem;
+    width: 32px;
+    height: 32px;
+  }
+
+  &__title {
+    flex-grow: 1;
+    margin: 0 1rem;
+    font-size: 2rem;
+  }
+
+  &__user {
+    margin-right: 1rem;
+    align-self: flex-end;
+  }
+
+  &__logout {
+    align-self: flex-end;
+  }
+
+  &__login {
+    align-self: flex-end;
+  }
+}
+
+.c-site-nav {
+  padding-top: 0.5rem;
+
+  &__link-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &--align-right {
+      justify-content: flex-end;
+    }
+  }
+
+  &__link-item {
+    padding: 0.5rem;
+
+    &--active {
+      border-bottom: solid darkred;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}

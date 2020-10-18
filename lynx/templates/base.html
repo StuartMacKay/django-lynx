@@ -1,0 +1,56 @@
+{% load static i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>
+    {% block head_title %}
+    {% endblock %}
+  </title>
+  <meta name="description" content=""/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="shortcut icon" type="image/svg+xml" href="{% static 'favicon.svg' %}"/>
+  {# Global stylesheets #}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/lynx.css' %}">
+
+  {% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+  {% endblock %}
+</head>
+
+<body class="l-page text">
+  <div class="l-page__inner">
+
+    <div class="l-page__header">
+    {% block header %}
+      {% include "snippets/header.html" %}
+    {% endblock %}
+    </div>
+
+    <div class="l-page__navigation">
+    {% block nav %}
+      {% include "snippets/nav.html" %}
+    {% endblock %}
+    </div>
+
+    <div class="l-page__content">
+      {% block content %}{% endblock %}
+    </div>
+
+    <div class="l-page__footer">
+    {% block footer %}
+      {% include "snippets/footer.html" %}
+    {% endblock %}
+    </div>
+
+  </div>
+
+{# Global javascript #}
+
+{% block extra_js %}
+  {# Override this in templates to add extra javascript #}
+{% endblock %}
+</body>
+</html>
+
