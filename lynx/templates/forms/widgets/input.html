@@ -1,0 +1,4 @@
+<input class="c-form-field__control{% if field.errors %} c-form-field__control--invalid{% endif %}"
+       type="text" name="{{ field.html_name }}" id="{{ field.auto_id }}"
+       {% if field.field.widget.value != None %} value="{{ field.field.widget.value|stringformat:'s' }}"{% endif %}
+       {% include "forms/widgets/attrs.html" %}>

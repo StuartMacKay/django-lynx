@@ -37,4 +37,50 @@
   background-color: #0062cc;
 }
 
+.c-form-field {
+  margin-bottom: 1rem;
+}
+.c-form-field__label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.c-form-field__control {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.c-form-field__control:focus {
+  border-color: rgba(126, 104, 239, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 104, 239, 0.6);
+  outline: 0 none;
+}
+.c-form-field__control--inline {
+  display: inline-block;
+  width: auto;
+}
+.c-form-field__control--invalid {
+  border: 1px solid #dc3545;
+}
+.c-form-field__control--invalid:focus {
+  border-color: rgba(220, 53, 69, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(220, 53, 69, 0.6);
+  outline: 0 none;
+}
+.c-form-field__error-item {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #dc3545;
+}
+
 /*# sourceMappingURL=lynx.css.map */

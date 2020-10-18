@@ -1,0 +1,3 @@
+<textarea name="{{ field.html_name }}"{% include "lynx/forms/widgets/attrs.html" %}>
+{% if field.field.widget.value != None %}{{ field.field.widget.value }}{% endif %}
+</textarea>
