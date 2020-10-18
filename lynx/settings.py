@@ -64,6 +64,10 @@ if ENV != 'dev':
 #   APPS & MIDDLEWARE
 # #####################
 
+# The order of the apps is important when searching for templates. Allauth
+# extends "base.html" so the demo app must come before allauth.account so
+# the login and logout forms are displayed with the correct template.
+
 INSTALLED_APPS = [
     "lynx",
     "django.contrib.admin",
@@ -73,6 +77,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
 ]
 
 MIDDLEWARE = [
@@ -161,7 +168,7 @@ AUTHENTICATION_BACKENDS = [
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(ROOT_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -278,3 +285,11 @@ DEFAULT_FROM_EMAIL = get_env_variable("DEFAULT_FROM_EMAIL", "noreply@lynx.com")
 # ########
 
 SITE_ID = 1
+
+
+# ###########
+#   ALLAUTH
+# ###########
+
+# The default is /accounts/login but allauth redirects to /account/login/
+LOGIN_URL = "/account/login"

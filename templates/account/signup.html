@@ -1,0 +1,32 @@
+{% extends "two-column.html" %}
+
+{% load i18n renderers %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block left-column %}
+<h1>{% trans "Sign Up" %}</h1>
+
+<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+
+<form class="c-form" id="signup_form" method="post" action="{% url 'account_signup' %}">
+  {% csrf_token %}
+
+  {{ form.non_field_errors }}
+
+  {% render_field form.username %}
+  {% render_field form.email %}
+  {% render_field form.password1 %}
+  {% render_field form.password2 %}
+
+  {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+
+  <button class="button button--primary" type="submit">{% trans "Sign Up" %}</button>
+
+</form>
+{% endblock %}
+
+{% block right-column %}
+{% endblock %}

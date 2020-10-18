@@ -1,0 +1,49 @@
+{% extends "two-column.html" %}
+
+{% load i18n account renderers%}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block left-column %}
+
+<h1>{% trans "Sign In" %}</h1>
+
+<p>{% blocktrans %}If you have not created an account yet, then please
+<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+
+<form class="c-form" method="POST" action="{% url 'account_login' %}">
+  {% csrf_token %}
+
+  {{ form.non_field_errors }}
+
+  {% render_field form.login %}
+  {% render_field form.password %}
+
+  <div class="c-form-field">
+    <input class="c-form-field__control c-form-field__control--inline{% if form.remember.errors %} c-form-field__control--invalid{% endif %}" type="checkbox" name="remember" id="id_remember">
+    <label class="c-form-field__label" for="id_remember">{% trans "Remember me" %}</label>
+    {% if form.remember.errors %}
+      <ul class="c-form-field__error-list">
+      {% for error in form.remember.errors %}
+          <li class="c-form-field__error-item">{{ error|escape }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+
+  </div>
+
+  {% if redirect_field_value %}
+    <input class="c-form-field__control" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
+  {% endif %}
+
+  <div class="c-form-field">
+    <a href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+  </div>
+
+  <button class="button button--primary" type="submit">{% trans "nav.login" %}</button>
+</form>
+
+{% endblock %}
+
+{% block right-column %}
+{% endblock %}

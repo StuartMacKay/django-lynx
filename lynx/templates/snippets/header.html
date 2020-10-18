@@ -2,4 +2,12 @@
 <div class="c-header">
   <img class="c-header__logo" src="{% static "img/logo.svg" %}">
   <div class="c-header__title">Django Lynx</div>
+  {% if request.user.is_authenticated %}
+    <div class="c-header__user">{{ request.user.username }}</div>
+    <div class="c-header__logout"><a href="{% url "account_logout" %}">{% trans 'nav.logout' %}</a></div>
+  {% else %}
+    <div class="c-header__login">
+      <a class="button button--primary" href="{% url "account_login" %}">{% trans 'nav.login' %}</a>
+    </div>
+  {% endif %}
 </div>

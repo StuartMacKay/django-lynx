@@ -18,6 +18,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: templates/snippets/header.html:7
+msgid "nav.logout"
+msgstr "Sign out"
+
+#: templates/snippets/header.html:10
+msgid "nav.login"
+msgstr "Sign in"
+
 #: templatetags/formatters.py:27
 #, python-format
 msgid "a week ago"
