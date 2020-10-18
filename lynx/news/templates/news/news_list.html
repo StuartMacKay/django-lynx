@@ -1,0 +1,10 @@
+{% extends "news/base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+  {% block objects %}
+    {% include "news/snippets/list.html" %}
+  {% endblock %}
+
+{% endblock %}

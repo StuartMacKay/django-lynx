@@ -17,6 +17,10 @@ SETTINGS_DEFAULTS = {
         "id": 1,
         "signups": True,
     },
+    "NewsConfig": {
+        "id": 1,
+        "items_per_page": 30,
+    },
 }
 
 

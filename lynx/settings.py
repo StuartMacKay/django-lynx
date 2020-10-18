@@ -71,6 +71,7 @@ if ENV != 'dev':
 INSTALLED_APPS = [
     "lynx",
     "lynx.config.apps.LynxConfig",
+    "lynx.news.apps.LynxConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -294,3 +295,6 @@ SITE_ID = 1
 
 # The default is /accounts/login but allauth redirects to /account/login/
 LOGIN_URL = "/account/login"
+
+LOGIN_REDIRECT_URL = "/news"
+LOGOUT_REDIRECT_URL = "/news"

@@ -1,0 +1,24 @@
+.c-news-item__link {
+  text-decoration: none;
+  color: inherit;
+}
+.c-news-item__link:hover {
+  text-decoration: underline;
+}
+.c-news-item__link:visited {
+  color: #999999;
+}
+.c-news-item__domain {
+  font-size: 0.8rem;
+  color: #7f7f7f;
+}
+.c-news-item__meta {
+  font-size: 0.8rem;
+  color: #5f5f5f;
+}
+
+.l-list__c-news-item {
+  padding-bottom: 0.75rem;
+}
+
+/*# sourceMappingURL=news.css.map */

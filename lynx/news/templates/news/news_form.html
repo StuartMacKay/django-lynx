@@ -1,0 +1,28 @@
+{% extends "news/base.html" %}
+{% load i18n renderers %}
+
+{% block content %}
+
+  {% block page_title %}
+    <h1>{% trans 'Submit' %}</h1>
+  {% endblock %}
+
+  {% block page_form %}
+    <form method="post" class="form">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+
+      {% for field in form.hidden_fields %}
+        {{ field }}
+      {% endfor %}
+
+      {% for field in form.visible_fields %}
+        {% render_field field %}
+      {% endfor %}
+
+      <button class="button button--primary" type="submit" value="submit">{% trans 'Submit' %}</button>
+
+    </form>
+  {% endblock %}
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% load i18n %}
+<ul class="l-list">
+  {% for object in object_list %}
+    <li class="l-list__item l-list__c-news-item">
+      {% include "news/snippets/list_item.html" %}
+    </li>
+  {% empty %}
+    <li class="l-list__item">
+      <div>
+        {% trans 'news-list.empty' %}
+      </div>
+    </li>
+  {% endfor %}
+</ul>

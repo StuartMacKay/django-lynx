@@ -1,0 +1,13 @@
+{% load i18n formatters %}
+<div class="c-news-item">
+  <div class="c-news-item__headline">
+    <a class="c-news-item__link" href="{{ object.url }}">{{ object.title }}</a>
+    <span class="c-news-item__domain">({{ object.domain }})</span>
+  </div>
+  <div class="c-news-item__meta">
+    {% blocktrans trimmed with username=object.submitter %}
+      news-item.submitter {{ username }}
+    {% endblocktrans %}
+    {{ object.created|age_format }}
+  </div>
+</div>

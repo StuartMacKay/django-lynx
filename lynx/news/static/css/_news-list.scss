@@ -1,0 +1,32 @@
+.c-news-item {
+
+  &__headline {
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: #999999;
+    }
+  }
+
+  &__domain {
+    font-size: 0.8rem;
+    color: #7f7f7f;
+  }
+
+  &__meta {
+    font-size: 0.8rem;
+    color: #5f5f5f;
+  }
+}
+
+.l-list__c-news-item {
+  margin-bottom: 0.75rem;
+}

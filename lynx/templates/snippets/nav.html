@@ -1,8 +1,13 @@
 {% load i18n %}
 <nav class="c-site-nav">
+  {% url "news:list-items" as top_stories %}
+  {% url "news:add-item" as submit_story %}
   <ul class="c-site-nav__link-list">
-    <li class="c-site-nav__link-item">
-      <a class="c-site-nav__link" href=""></a>
+    <li class="c-site-nav__link-item{% if request.path == top_stories %} nav__link-item--active{% endif %}">
+      <a class="c-site-nav__link" href="{{ top_stories }}">{% trans "nav.top_stories" %}</a>
+    </li>
+    <li class="c-site-nav__link-item{% if request.path == submit_story %} nav__link-item--active{% endif %}">
+      <a class="c-site-nav__link" href="{{ submit_story }}">{% trans "nav.submit_story" %}</a>
     </li>
   </ul>
 </nav>
