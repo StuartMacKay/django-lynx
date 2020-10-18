@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[co]
+*.egg*
+
+# Editor temp files
+*~
+
+# Ignore dot files except those required for the project
+.*
+!.gitignore
+!.gitkeep
+!.bummpversion.cfg
+!.editorconfig
+!.readthedocs.yml
+!.travis.yml
+
+# Project artefacts
+reports
+venv
+*.css.map
+
+# Development artefacts
+*.log
+db.sqlite3
+
+# Any local makefiles
+*.mk

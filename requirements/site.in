@@ -1,0 +1,8 @@
+#
+# Demo site requirements
+#
+# All the packages here are also listed in the django-lynx requirements
+# so you only need this list when deploying the site.
+
+django
+django-allauth

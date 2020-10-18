@@ -1,0 +1,8 @@
+
+-r docs.in
+-r site.in
+-r tests.in
+
+bump2version
+coverage[toml]
+tox
