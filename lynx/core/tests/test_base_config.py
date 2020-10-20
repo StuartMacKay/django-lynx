@@ -6,7 +6,7 @@ from django.test import TestCase
 
 import pytest
 
-from lynx.config.models import BaseConfig
+from lynx.core.models import BaseConfig
 
 # These tests were originally written as pytest functions however there
 # were problems creating the concrete class for testing - specifically

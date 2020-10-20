@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-18 16:12+0000\n"
+"POT-Creation-Date: 2020-10-20 06:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,21 +18,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/snippets/header.html:7
-msgid "nav.logout"
-msgstr "Sign out"
+#: admin/base_config.py:44
+msgid "The settings were updated successfully."
+msgstr ""
 
-#: templates/snippets/header.html:10
-msgid "nav.login"
-msgstr "Sign in"
+#: apps.py:8
+msgid "Core"
+msgstr ""
 
-#: templates/snippets/nav.html:7
-msgid "nav.top_stories"
-msgstr "Top stories"
+#: models/site_config.py:13
+msgid "Enable signups"
+msgstr ""
 
-#: templates/snippets/nav.html:10
-msgid "nav.submit_story"
-msgstr "Submit"
+#: models/site_config.py:16 models/site_config.py:17
+msgid "Site Configuration"
+msgstr ""
+
+#: templates/admin/core/change_form.html:7
+#: templates/admin/core/object_history.html:6
+msgid "Home"
+msgstr ""
+
+#: templates/admin/core/change_form.html:14
+#: templates/admin/core/object_history.html:9
+msgid "History"
+msgstr ""
+
+#: templates/admin/core/change_form.html:15
+msgid "View on site"
+msgstr ""
 
 #: templatetags/formatters.py:27
 #, python-format

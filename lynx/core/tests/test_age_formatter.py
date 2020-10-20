@@ -1,10 +1,11 @@
 from datetime import timedelta
 
-import pytest
 from django.utils import timezone
+
+import pytest
 from freezegun import freeze_time
 
-from lynx.templatetags.formatters import age_format
+from lynx.core.templatetags.formatters import age_format
 
 _SECONDS_PER_MINUTE = 60
 _SECONDS_PER_HOUR = 3600

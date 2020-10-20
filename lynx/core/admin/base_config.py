@@ -25,8 +25,8 @@ from django.utils.translation import gettext_lazy as _
 
 
 class BaseConfigAdmin(admin.ModelAdmin):
-    object_history_template = "admin/config/object_history.html"
-    change_form_template = "admin/config/change_form.html"
+    object_history_template = "admin/core/object_history.html"
+    change_form_template = "admin/core/change_form.html"
 
     class Media:
         css = {"all": ("css/admin/settings.css",)}

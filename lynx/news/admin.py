@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from lynx.config.admin.base_config import BaseConfigAdmin
+from lynx.core.admin.base_config import BaseConfigAdmin
 
 from .models import News, NewsConfig
 

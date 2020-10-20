@@ -3,7 +3,7 @@ from random import randrange
 
 import factory
 
-from lynx.factories import UserFactory
+from lynx.core.factories import UserFactory
 
 
 def relative_date(delta):
@@ -25,11 +25,11 @@ class NewsFactory(factory.django.DjangoModelFactory):
     created = factory.LazyAttribute(lambda o: o.timestamp)
     updated = factory.LazyAttribute(lambda o: o.timestamp)
 
-    title = factory.Faker('sentence')
-    url = factory.Faker('url')
+    title = factory.Faker("sentence")
+    url = factory.Faker("url")
 
     submitted_by = factory.SubFactory(UserFactory)
 
     class Meta:
         model = "news.News"
-        exclude = ("timestamp", )
+        exclude = ("timestamp",)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-18 16:12+0000\n"
+"POT-Creation-Date: 2020-10-20 06:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,27 +18,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: news/apps.py:18 news/models.py:29
+#: apps.py:18 models/news.py:29
 msgid "News"
 msgstr "News"
 
-#: news/models.py:23
+#: models/news.py:23
 msgid "Title"
 msgstr "Title"
 
-#: news/models.py:24
+#: models/news.py:24
 msgid "URL"
 msgstr "URL"
 
-#: news/templates/news/news_form.html:7 news/templates/news/news_form.html:23
+#: models/news_config.py:13
+msgid "News items per page"
+msgstr ""
+
+#: models/news_config.py:16 models/news_config.py:17
+msgid "News Configuration"
+msgstr ""
+
+#: templates/news/news_form.html:7 templates/news/news_form.html:23
 msgid "Submit"
 msgstr "Submit"
 
-#: news/templates/news/snippets/list.html:10
+#: templates/news/snippets/list.html:10
 msgid "news-list.empty"
 msgstr "There is no news at this time."
 
-#: news/templates/news/snippets/list_item.html:8
+#: templates/news/snippets/list_item.html:8
 #, python-format
 msgid "news-item.submitter %(username)s"
 msgstr "by %(username)s"
