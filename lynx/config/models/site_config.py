@@ -6,6 +6,8 @@ from .base_config import BaseConfig
 
 class SiteConfig(BaseConfig):
 
+    SIGNUPS = True
+
     signups = models.BooleanField(default=True)
 
     signups.verbose_name = _("Enable signups")
@@ -13,3 +15,9 @@ class SiteConfig(BaseConfig):
     class Meta:
         verbose_name = _("Site Configuration")
         verbose_name_plural = _("Site Configuration")
+
+    @classmethod
+    def get_initial(cls):
+        initial = super().get_initial()
+        initial["signups"] = cls.SIGNUPS
+        return initial

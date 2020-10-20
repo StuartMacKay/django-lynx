@@ -1,18 +1,17 @@
 """
-Model for cresting singletons for storing settings in the database.
+Model for cresting singletons for storing configurations in the database.
 
 Todo:
     * There are still a couple of inconsistencies between the way objects
       behave with the cache and the database. For example, you can delete
       an object from the database but still add it to the cache.
     * Should the cache key use the object's actual pk rather than the
-      assumed value (the default from the settings or the DEFAULT_PK value.
+      assumed value (the default from the config values or the DEFAULT_PK value.
 
 """
-from importlib import import_module
 from typing import Tuple, Type
 
-from django.conf import settings as site_settings
+from django.conf import settings
 from django.core.cache import caches
 from django.db import models
 
@@ -20,34 +19,22 @@ __all__ = ("BaseConfig",)
 
 
 class BaseConfig(models.Model):
-    """
-    Base class for a configuration (settings) singleton.
 
-    To use, create a subclass add it to your models.py. Then create a
-    settings.py in the same app/module and define SETTINGS_DEFAULTS which
-    contains a dictionary values to initialise all the fields in your model.
-    For example::
+    # The name of the cache where the object will be stored. Caching is
+    # disables if this setting is None.
+    CONFIG_CACHE_NAME = "default"
 
-        SETTINGS_DEFAULTS = {
-            "MySettings": {
-                "id": 1,
-                "title": "My Site",
-                "comments": True,
-                ...
-            }
-        }
+    # The time in seconds that the setting will be cached for.
+    CONFIG_CACHE_TIMEOUT = 60 * 5
 
-    Each settings singleton will first load the defaults from it's local setting
-    file and then checks Django's (global) settings for any values you want to
-    override. That makes it possible to ship apps which have sensible defaults
-    which then can be selectively overridden.
+    # A prefix that is added to the cache key to avoid the chance of collisions.
+    # This is in addition to any value defined in the KEY_PREFIX setting.
+    CONFIG_CACHE_PREFIX = "config"
 
-    """
-
-    CACHE_NAME = "SETTINGS_CACHE_NAME"
-    CACHE_TIMEOUT = "SETTINGS_CACHE_TIMEOUT"
-    CACHE_PREFIX = "SETTINGS_CACHE_PREFIX"
-    DEFAULTS = "SETTINGS_DEFAULTS"
+    CACHE_NAME = "CONFIG_CACHE_NAME"
+    CACHE_TIMEOUT = "CONFIG_CACHE_TIMEOUT"
+    CACHE_PREFIX = "CONFIG_CACHE_PREFIX"
+    DEFAULTS = "CONFIG_DEFAULTS"
 
     DEFAULT_PK = 1
 
@@ -56,16 +43,18 @@ class BaseConfig(models.Model):
 
     @classmethod
     def get_setting(cls, name):
-        app_settings = import_module("lynx.config.settings")
-        return getattr(site_settings, name, getattr(app_settings, name))
+        return getattr(settings, name, getattr(cls, name))
 
     @classmethod
-    def get_app_settings(cls):
-        return import_module("...settings", package=cls.__module__)
+    def get_initial(cls) -> dict:
+        return {
+            "id": cls.DEFAULT_PK,
+        }
 
     @classmethod
-    def get_app_setting(cls, name):
-        return getattr(cls.get_app_settings(), name)
+    def get_site_defaults(cls):
+        defaults = getattr(settings, cls.DEFAULTS, {})
+        return defaults.get(cls.__name__, {})
 
     @classmethod
     def get_defaults(cls, **kwargs) -> dict:
@@ -73,10 +62,8 @@ class BaseConfig(models.Model):
         Get the default values for each field in the model.
 
         """
-        app_defaults = cls.get_app_setting(cls.DEFAULTS)
-        site_defaults = getattr(site_settings, cls.DEFAULTS, {})
-        defaults = app_defaults.get(cls.__name__, {}).copy()
-        defaults.update(site_defaults.get(cls.__name__, {}))
+        defaults = cls.get_initial()
+        defaults.update(cls.get_site_defaults())
         defaults.update(kwargs)
         return defaults
 
@@ -106,15 +93,15 @@ class BaseConfig(models.Model):
         return caches[name] if name else None
 
     @classmethod
-    def get_cache_entry(cls) -> (Type["Settings"], None):
-        """Get the settings object from the cache."""
+    def get_cache_entry(cls) -> (Type["BaseConfig"], None):
+        """Get the config object from the cache."""
         cache = cls.get_cache()
         return cache.get(cls.get_cache_key()) if cache else None
 
     @classmethod
     def create(cls, **kwargs):
         """
-        Create/re-generate the settings object from the defaults.
+        Create/re-generate the config object from the defaults.
 
         """
         obj = cls(**cls.get_defaults(**kwargs))
@@ -124,7 +111,7 @@ class BaseConfig(models.Model):
     @classmethod
     def fetch(cls):
         """
-        Fetch the settings singleton returning it from the cache, if enabled,
+        Fetch the config singleton returning it from the cache, if enabled,
         otherwise the database.
 
         """
@@ -142,7 +129,7 @@ class BaseConfig(models.Model):
 
     def save(self, *args, **kwargs) -> None:
         """
-        Save the settings to the database and update the cache, if enabled.
+        Save the config to the database and update the cache, if enabled.
 
         Notes:
             The primary key is set explicitly to prevent multiple instances
