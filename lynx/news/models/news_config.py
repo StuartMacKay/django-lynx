@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from .base_config import BaseConfig
+from lynx.config.models.base_config import BaseConfig
 
 
 class NewsConfig(BaseConfig):
