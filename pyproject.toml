@@ -50,7 +50,7 @@ skip = [
 ]
 
 [tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE = "lynx.settings"
+DJANGO_SETTINGS_MODULE = "lynx.site.settings"
 
 testpaths = [
     "lynx"

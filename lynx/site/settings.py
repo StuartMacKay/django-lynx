@@ -54,9 +54,9 @@ if ENV == "prod" and DEBUG:
 #   PATHS
 # #########
 
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-if ENV != 'dev':
+if ENV != "dev":
     MEDIA_ROOT = os.path.join(ROOT_DIR, "media")
     STATIC_ROOT = os.path.join(ROOT_DIR, "static")
 
@@ -69,8 +69,8 @@ if ENV != 'dev':
 # the login and logout forms are displayed with the correct template.
 
 INSTALLED_APPS = [
-    "lynx",
-    "lynx.config.apps.LynxConfig",
+    "lynx.core.apps.LynxConfig",
+    "lynx.site.apps.LynxConfig",
     "lynx.news.apps.LynxConfig",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -86,7 +86,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
-    'django.middleware.locale.LocaleMiddleware',
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -100,9 +100,9 @@ MIDDLEWARE = [
 #   WEB SERVER
 # ##############
 
-ROOT_URLCONF = "lynx.urls"
+ROOT_URLCONF = "lynx.site.urls"
 
-WSGI_APPLICATION = "lynx.wsgi.application"
+WSGI_APPLICATION = "lynx.site.wsgi.application"
 
 
 # ############
@@ -276,8 +276,8 @@ if ENV == "prod":
     EMAIL_HOST_PASSWORD = get_env_variable("EMAIL_HOST_PASSWORD")
     EMAIL_USE_TLS = get_env_boolean("EMAIL_USE_TLS")
 else:
-    EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-    EMAIL_FILE_PATH = os.path.join(ROOT_DIR, 'mail.log')
+    EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+    EMAIL_FILE_PATH = os.path.join(ROOT_DIR, "mail.log")
 
 DEFAULT_FROM_EMAIL = get_env_variable("DEFAULT_FROM_EMAIL", "noreply@lynx.com")
 
