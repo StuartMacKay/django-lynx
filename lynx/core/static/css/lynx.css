@@ -115,6 +115,7 @@
   border-top: thin solid #eeeeee;
   border-bottom: thin solid #eeeeee;
   min-height: 75vh;
+  margin-bottom: 1rem;
 }
 .l-page__footer {
   width: 80%;
@@ -167,6 +168,10 @@
 }
 .c-site-nav__link {
   text-decoration: none;
+}
+
+.c-pagination__content {
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=lynx.css.map */

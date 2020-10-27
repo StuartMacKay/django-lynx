@@ -18,6 +18,7 @@
     border-top: thin solid #eeeeee;
     border-bottom: thin solid #eeeeee;
     min-height: 75vh;
+    margin-bottom: 1rem;
   }
 
   &__footer {
@@ -83,4 +84,8 @@
   &__link {
     text-decoration: none;
   }
+}
+
+.c-pagination__content {
+  margin-bottom: 1rem;
 }

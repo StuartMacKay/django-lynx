@@ -4,7 +4,17 @@
 {% block content %}
 
   {% block objects %}
-    {% include "news/snippets/list.html" %}
+    {% include "news/snippets/list.html" with objects=page_obj %}
+  {% endblock %}
+
+  {% block pagination %}
+    {% if page_obj.has_next %}
+      <div class="c-pagination c-pagination__content">
+        <nav role="navigation" aria-label="Pagination">
+          <a href="?page={{ page_obj.next_page_number }}">{% trans "More" %}</a>
+        </nav>
+      </div>
+    {% endif %}
   {% endblock %}
 
 {% endblock %}
