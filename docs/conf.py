@@ -22,7 +22,7 @@ project = "Django Lynx"
 copyright = "2020, Stuart MacKay"
 author = "Stuart MacKay"
 
-version = "0.0"
+version = "0.0.0"
 release = "0.0"
 
 
