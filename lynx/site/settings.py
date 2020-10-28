@@ -12,18 +12,14 @@ from django.core.exceptions import ImproperlyConfigured
 def get_env_variable(var_name, default=None):
     """Get the environment variable or return exception."""
 
-    # TODO The exception is not displayed on the console if the env variable
-    # is not set and there is no default.
-
-    if default is not None:
-        return os.environ.get(var_name, default)
-    else:
+    if default is None:
         try:
             return os.environ[var_name]
-        except KeyError:
+        except KeyError as err:
             error_msg = "Set the {} environment variable".format(var_name)
-            print(error_msg)
-            raise ImproperlyConfigured(error_msg)
+            raise ImproperlyConfigured(error_msg) from err
+    else:
+        return os.environ.get(var_name, default)
 
 
 def get_env_boolean(var_name, default=None):
