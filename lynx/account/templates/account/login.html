@@ -1,15 +1,19 @@
 {% extends "two-column.html" %}
 
-{% load i18n account renderers%}
+{% load i18n account renderers configs %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block left-column %}
 
+{% config "site.SiteCOnfig" as settings %}
+
 <h1>{% trans "Sign In" %}</h1>
 
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+{% if settings.signups %}
+  <p>{% blocktrans %}If you have not created an account yet, then please
+  <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+{% endif %}
 
 <form class="c-form" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}

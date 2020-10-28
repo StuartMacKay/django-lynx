@@ -65,6 +65,7 @@ if ENV != "dev":
 # the login and logout forms are displayed with the correct template.
 
 INSTALLED_APPS = [
+    "lynx.account.apps.LynxConfig",
     "lynx.core.apps.LynxConfig",
     "lynx.site.apps.LynxConfig",
     "lynx.news.apps.LynxConfig",

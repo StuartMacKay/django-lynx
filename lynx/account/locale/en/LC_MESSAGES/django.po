@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-28 09:56+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: apps.py:18
+msgid "Account"
+msgstr ""
+
+#: forms/signup.py:20 tests/test_signup_form.py:25
+msgid "account.signups.disabled"
+msgstr "New accounts cannot be opened right now. Try again later."
+
+#: templates/account/login.html:5 templates/account/login.html:9
+msgid "Sign In"
+msgstr "Sign In"
+
+#: templates/account/login.html:11
+#, python-format
+msgid ""
+"If you have not created an account yet, then please\n"
+"<a href=\"%(signup_url)s\">sign up</a> first."
+msgstr ""
+
+#: templates/account/login.html:24
+msgid "Remember me"
+msgstr ""
+
+#: templates/account/login.html:40
+msgid "Forgot Password?"
+msgstr ""
+
+#: templates/account/login.html:43
+msgid "nav.login"
+msgstr "Sign In"
+
+#: templates/account/logout.html:5 templates/account/logout.html:8
+msgid "Sign Out"
+msgstr "Sign Out"
+
+#: templates/account/logout.html:10
+msgid "Are you sure you want to sign out?"
+msgstr ""
+
+#: templates/account/logout.html:19
+msgid "nav.logout"
+msgstr "Sign Out"
+
+#: templates/account/password_reset.html:5
+#: templates/account/password_reset.html:9
+msgid "Password Reset"
+msgstr ""
+
+#: templates/account/password_reset.html:11
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+
+#: templates/account/password_reset.html:20
+msgid "Reset My Password"
+msgstr ""
+
+#: templates/account/signup.html:5
+msgid "Signup"
+msgstr ""
+
+#: templates/account/signup.html:8 templates/account/signup.html:26
+msgid "Sign Up"
+msgstr ""
+
+#: templates/account/signup.html:10
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
