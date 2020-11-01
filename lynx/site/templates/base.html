@@ -1,5 +1,5 @@
-{% load static i18n %}
-
+{% load static i18n configs %}
+{% config "site.SiteConfig" as settings %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +10,7 @@
   </title>
   <meta name="description" content=""/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="shortcut icon" type="image/svg+xml" href="{% static 'favicon.svg' %}"/>
+  <link rel="shortcut icon" type="image/svg+xml" href="{{ settings.icon.url }}"/>
   {# Global stylesheets #}
   <link rel="stylesheet" type="text/css" href="{% static 'css/lynx.css' %}">
 

@@ -1,7 +1,8 @@
-{% load static i18n %}
+{% load static i18n configs %}
+{% config "site.SiteConfig" as settings %}
 <div class="c-header">
-  <img class="c-header__logo" src="{% static "img/logo.svg" %}">
-  <div class="c-header__title">Django Lynx</div>
+  <img class="c-header__logo" src="{{ settings.logo.url }}">
+  <div class="c-header__title">{{ settings.title }}</div>
   {% if request.user.is_authenticated %}
     <div class="c-header__user">{{ request.user.username }}</div>
     <div class="c-header__logout"><a href="{% url "account_logout" %}">{% trans 'nav.logout' %}</a></div>
