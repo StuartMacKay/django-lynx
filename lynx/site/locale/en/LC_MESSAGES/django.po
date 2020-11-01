@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-20 06:14+0000\n"
+"POT-Creation-Date: 2020-11-01 09:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,21 +19,41 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:8
-msgid "Lynx"
+msgid "Site"
 msgstr ""
 
-#: templates/snippets/header.html:7
+#: models.py:17
+msgid "Site title"
+msgstr ""
+
+#: models.py:18
+msgid "Site logo"
+msgstr ""
+
+#: models.py:19
+msgid "Site favicon"
+msgstr ""
+
+#: models.py:20
+msgid "Enable signups"
+msgstr ""
+
+#: models.py:23 models.py:24
+msgid "Site Configuration"
+msgstr ""
+
+#: templates/snippets/header.html:8
 msgid "nav.logout"
 msgstr "Sign out"
 
-#: templates/snippets/header.html:10
+#: templates/snippets/header.html:11
 msgid "nav.login"
 msgstr "Sign in"
 
 #: templates/snippets/nav.html:7
-msgid "nav.top_stories"
-msgstr "Top stories"
+msgid "nav.news"
+msgstr "News"
 
 #: templates/snippets/nav.html:10
-msgid "nav.submit_story"
+msgid "nav.submit"
 msgstr "Submit"
