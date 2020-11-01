@@ -13,17 +13,15 @@ cffi==1.14.3              # via cryptography
 chardet==3.0.4            # via requests
 click==7.1.2              # via black
 coverage==5.3             # via pytest-cov
-cryptography==3.1.1       # via pyjwt
-dataclasses==0.6          # via black
+cryptography==3.2         # via pyjwt
 defusedxml==0.6.0         # via python3-openid
-django-allauth==0.43.0    # via -r requirements/site.in
-django==3.1.2             # via -r requirements/site.in, django-allauth
+django-allauth==0.43.0    # via -r site.in
+django==3.1.2             # via -r site.in, django-allauth
 factory-boy==3.1.0        # via pytest-factoryboy
 faker==4.14.0             # via factory-boy
 flake8==3.8.3             # via pytest-flake8
-freezegun==1.0.0          # via -r requirements/tests.in
+freezegun==1.0.0          # via -r tests.in
 idna==2.10                # via requests
-importlib-metadata==2.0.0  # via flake8, pluggy, pytest
 inflection==0.5.1         # via pytest-factoryboy
 iniconfig==1.0.1          # via pytest
 isort==5.5.4              # via pytest-isort
@@ -39,13 +37,13 @@ pycparser==2.20           # via cffi
 pyflakes==2.2.0           # via flake8
 pyjwt[crypto]==1.7.1      # via django-allauth
 pyparsing==2.4.7          # via packaging
-pytest-black==0.3.11      # via -r requirements/tests.in
-pytest-cov==2.10.1        # via -r requirements/tests.in
-pytest-django==3.10.0     # via -r requirements/tests.in
-pytest-factoryboy==2.0.3  # via -r requirements/tests.in
-pytest-flake8==1.0.6      # via -r requirements/tests.in
-pytest-isort==1.2.0       # via -r requirements/tests.in
-pytest==6.1.0             # via -r requirements/tests.in, pytest-black, pytest-cov, pytest-django, pytest-factoryboy, pytest-flake8
+pytest-black==0.3.11      # via -r tests.in
+pytest-cov==2.10.1        # via -r tests.in
+pytest-django==3.10.0     # via -r tests.in
+pytest-factoryboy==2.0.3  # via -r tests.in
+pytest-flake8==1.0.6      # via -r tests.in
+pytest-isort==1.2.0       # via -r tests.in
+pytest==6.1.0             # via -r tests.in, pytest-black, pytest-cov, pytest-django, pytest-factoryboy, pytest-flake8
 python-dateutil==2.8.1    # via faker, freezegun
 python3-openid==3.2.0     # via django-allauth
 pytz==2020.1              # via django
@@ -59,4 +57,3 @@ toml==0.10.1              # via black, pytest, pytest-black
 typed-ast==1.4.1          # via black
 typing-extensions==3.7.4.3  # via black
 urllib3==1.25.10          # via requests
-zipp==3.3.1               # via importlib-metadata
