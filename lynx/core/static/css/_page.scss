@@ -1,5 +1,4 @@
 .l-page {
-  padding-top: 1rem;
   padding-bottom: 1rem;
   line-height: 1.5;
 
@@ -33,6 +32,7 @@
   flex-direction: row;
 
   &__logo {
+    padding-left: 0.5rem;
     padding-top: 0.5rem;
     width: 32px;
     height: 32px;
@@ -59,7 +59,7 @@
 }
 
 .c-site-nav {
-  padding-top: 0.5rem;
+  padding-top: 0;
 
   &__link-list {
     display: flex;
