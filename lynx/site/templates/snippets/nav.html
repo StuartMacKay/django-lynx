@@ -3,10 +3,10 @@
   {% url "news:list-items" as news %}
   {% url "news:add-item" as submit %}
   <ul class="c-site-nav__link-list">
-    <li class="c-site-nav__link-item{% if request.path == news %} nav__link-item--active{% endif %}">
+    <li class="c-site-nav__link-item{% if request.path == news %} c-site-nav__link-item--active{% endif %}">
       <a class="c-site-nav__link" href="{{ news }}">{% trans "nav.news" %}</a>
     </li>
-    <li class="c-site-nav__link-item{% if request.path == submit %} nav__link-item--active{% endif %}">
+    <li class="c-site-nav__link-item{% if request.path == submit %} c-site-nav__link-item--active{% endif %}">
       <a class="c-site-nav__link" href="{{ submit }}">{% trans "nav.submit" %}</a>
     </li>
   </ul>
