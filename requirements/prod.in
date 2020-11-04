@@ -2,3 +2,4 @@
 -r site.in
 
 sentry-sdk
+psycopg2-binary

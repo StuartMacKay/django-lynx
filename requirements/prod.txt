@@ -14,6 +14,7 @@ django-allauth==0.43.0    # via -r requirements/site.in
 django==3.1.2             # via -r requirements/site.in, django-allauth
 idna==2.10                # via requests
 oauthlib==3.1.0           # via requests-oauthlib
+psycopg2-binary==2.8.6    # via -r requirements/prod.in
 pycparser==2.20           # via cffi
 pyjwt[crypto]==1.7.1      # via django-allauth
 python3-openid==3.2.0     # via django-allauth
