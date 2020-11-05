@@ -1,7 +1,9 @@
 {% load static i18n configs %}
 {% config "site.SiteConfig" as settings %}
 <div class="c-header">
-  <img class="c-header__logo" src="{{ settings.logo.url }}">
+  {% if settings.logo %}
+    <img class="c-header__logo" src="{{ settings.logo.url }}">
+  {% endif %}
   <div class="c-header__title">{{ settings.title }}</div>
   {% if request.user.is_authenticated %}
     <div class="c-header__user">{{ request.user.username }}</div>
