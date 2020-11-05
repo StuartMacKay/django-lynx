@@ -52,8 +52,13 @@ if ENV == "prod" and DEBUG:
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-MEDIA_ROOT = os.path.join(ROOT_DIR, "media")
-STATIC_ROOT = os.path.join(ROOT_DIR, "static")
+if ENV in ("prod", "staging"):
+    MEDIA_ROOT = get_env_variable("MEDIA_ROOT")
+    STATIC_ROOT = get_env_variable("STATIC_ROOT")
+else:
+    MEDIA_ROOT = os.path.join(ROOT_DIR, "media")
+    STATIC_ROOT = os.path.join(ROOT_DIR, "static")
+
 
 # #####################
 #   APPS & MIDDLEWARE
