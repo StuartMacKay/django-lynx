@@ -28,6 +28,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="siteconfig",
             name="signups",
-            field=models.BooleanField(null=True),
+            field=models.BooleanField(default=False),
         ),
     ]

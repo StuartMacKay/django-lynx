@@ -7,12 +7,12 @@ from lynx.core.models import BaseConfig
 class SiteConfig(BaseConfig):
 
     TITLE = "Django Lynx"
-    SIGNUPS = True
+    SIGNUPS = False
 
     title = models.CharField(max_length=50, blank=True)
     logo = models.FileField(upload_to="site", null=True)
     icon = models.FileField(upload_to="site", null=True)
-    signups = models.BooleanField(default=True)
+    signups = models.BooleanField(default=False)
 
     title.verbose_name = _("Site title")
     logo.verbose_name = _("Site logo")
